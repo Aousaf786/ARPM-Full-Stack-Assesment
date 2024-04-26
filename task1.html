@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 1</title>
+<style>
+  #starting-div, #ending-div {
+    width: 500px;
+    height: 100px;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .char {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 5px;
+  }
+</style>
+</head>
+<body>
+<div id="starting-div"></div>
+<div id="ending-div"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const phrase = "012345678";
+  const startingDiv = document.getElementById('starting-div');
+  const endingDiv = document.getElementById('ending-div');
+
+  function moveChar(char, destination, delay, index) {
+    setTimeout(function() {
+      destination.insertBefore(char, destination.childNodes[index]);
+    }, delay * 1000);
+  }
+
+  let delay = 0;
+
+  for (let i = 0; i < phrase.length; i++) {
+    const char = document.createElement('span');
+    char.className = 'char';
+    char.textContent = phrase[i];
+    startingDiv.appendChild(char);
+
+    if (i % 2 === 0) {
+      delay = 4 + ((i+1) * 1) + 1;        
+      moveChar(char, endingDiv, delay, i);
+    } else {
+      delay = 4 + (i * 1);
+      moveChar(char, endingDiv, delay, i);
+    }
+  }
+});
+</script>
+</body>
+</html>
