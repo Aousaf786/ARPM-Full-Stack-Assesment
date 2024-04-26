@@ -1,0 +1,45 @@
+.wrapper {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      padding: 1rem;
+    background: #000;
+}
+.main_container {
+  position: relative;
+}
+
+
+.heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2;
+}
+
+.rouneded-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: moveCircle 5s linear infinite;
+    z-index: 3;
+    top: 20px;
+    border: 2px solid #fff;
+    mix-blend-mode: difference;
+}
+
+@keyframes moveCircle {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 50px);
+  }
+  100% {
+    left: 0;
+  }
+}
