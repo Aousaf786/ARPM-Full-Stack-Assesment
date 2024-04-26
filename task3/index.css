@@ -1,0 +1,11 @@
+.row {
+  margin-bottom: 1.563rem;
+}
+
+.row [class^="box"] {
+  background-color: #8ae51e;
+  padding: 0.313rem;
+  border-radius: 6.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+}
